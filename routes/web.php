@@ -1,7 +1,7 @@
 <?php
 
-use App\Http\Controllers\Cadastrar;
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\Homepage;
+use App\Http\Controllers\Cadastro;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,8 +15,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [Cadastrar::class, 'getAjax']);
+Route::get('/', [Homepage::class, 'index']);
 
-Route::get('/cadastro', function (){
-    return view('cadastro');
-});
+Route::post('/', [Homepage::class, 'userList']);
+
+Route::get('/cadastro', [Cadastro::class, 'index']);
+
+Route::post('/cadastro', [Cadastro::class, 'insertUser']);
