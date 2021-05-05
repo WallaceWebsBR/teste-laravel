@@ -13,7 +13,7 @@
         <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
           <div class="container-fluid">
-            <a class="navbar-brand">Teste-Laravel</a>
+            <a class="navbar-brand"><i class="bi bi-asterisk"></i>Teste-Laravel</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -29,7 +29,7 @@
               <form class="d-flex" method="post" action="/">
               @csrf
                 <input class="form-control me-2" type="search" placeholder="Pesquise Aqui..." aria-label="Search" name="name" required>
-                <button class="btn-primary" type="submit">Pesquisar <i class="fas fa-search"></i></button>
+                <button class="btn-primary" type="submit">Pesquisar <i class="bi bi-search"></i></button>
               </form>
             </div>
           </div>
