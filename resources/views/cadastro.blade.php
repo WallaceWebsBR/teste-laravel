@@ -9,56 +9,44 @@
                 @csrf
                 <div class="col-xs-2" id='form'>       
                     <label>CPF (único)</label>
-                    <input class="form-control" name="cpf" id="cpf" maxlength="11" required>
+                    <input class="form-control" name="cpf" id="cpf" maxlength="11" value="{{ $user->cpf ?? '' }}" required>
                     <label> Nome </label>
-                    <input class="form-control" name="name" type="text">
+                    <input class="form-control" name="name" type="text" value="{{ $user->name ?? '' }}" required>
                     <label>Carteira de Trabalho</label>
-                    <input class="form-control" name="ctps" type="number">
+                    <input class="form-control" name="ctps" type="number" value="{{ $user->ctps ?? '' }}" required>
                     <label>Setor</label>
-                        <select class="form-select" name="department">
+                        <select class="form-select" name="department" value="{{ $user->department ?? '' }}">
                             <option value="Vendas">Vendas</option>
                             <option value="Escritório">Escritório</option>
                             <option value="Estoque">Estoque</option>
                             <option value="Administrativo">Administrativo</option>
                         </select>
-                    <label>Telefone</label>
+                    <label>Telefones</label>
+                    <div class="row">
                     <div class="input-group mb-3">
-                     <input class="form-control" type="text" name="tel1" id="tel1">
-                     <button id="addTel" class="btn btn-primary">Adicionar mais</button>
-                     
+                    <input class="tel form-control" type="text" name="tel1" id="tel1" placeholder="Fixo: (00) 0000-0000" value="{{ $user->tel ?? '' }}">
+                    <input class="tel form-control" placeholder="Fixo: (00) 0000-0000" type="text" name="tel2" value="{{ $user->tel2 ?? '' }}"/>
+                    </div>
+                    <div class="input-group mb-3">
+                    <input class="tel2 form-control" type="text" placeholder="Celular: (00) 00000-0000" name="tel3" value="{{ $user->tel3 ?? '' }}"/>
+                    <input class="tel2 form-control" type="text" placeholder="Celular: (00) 00000-0000" name="tel4" value="{{ $user->tel4 ?? '' }}" />
+                    <input class="tel2 form-control" type="text" placeholder="Celular: (00) 00000-0000" name="tel5" value="{{ $user->tel5 ?? '' }}" />
+                    </div>
+                    </div>
                 </div>
-                </div>
-
-                <input type="submit" value="Cadastrar">
+                <input type="hidden" name="id" value="{{ $user->id ?? ''}}">
+                <input type="hidden" name="update" value="{{ $update ?? 'no'}}">
+                <button class="btn btn-success" type="submit">Cadastrar</button>
             </div> 
             </form>
     </div>
         <script>
-        $(document).ready(function() {
-            var max_fields      = 5; //maximum input boxes allowed
-            var wrapper   		= $("#form"); //Fields wrapper
-            var add_button      = $("#addTel"); //Add button ID
-            
-            var x = 1; //initlal text box count
-            $(add_button).click(function(e){ //on add input button click
-                e.preventDefault();
-                if(x < max_fields){ //max input box allowed
-                    x++; //text box increment
-                    $(wrapper).append('<div class="input-group mb-3"><input class="form-control" type="text" name="tel' + x + '" id="tel' + x + '"/><button id="btnRemoveTel" class="btn btn-danger">Remover</button></div>'); //add input box
-                }
-            });
-            
-            $(wrapper).on("click","#btnRemoveTel", function(e){ //user click on remove text
-                e.preventDefault(); $(this).parent('div').remove(); x--;
-            })
-        });
-        $(document).ready(function(){
-  $('#tel1').mask('(00) 00000-0000');
-  $('#tel2').mask('(00) 00000-0000');
-  $('#tel3').mask('(00) 00000-0000');
-  $('#tel4').mask('(00) 00000-0000');
-  $('#tel5').mask('(00) 00000-0000');
-  $('#cpf').mask('000.000.000-00', {reverse: true});
+
+  $(document).ready(function(){
+        //TELEFONE FIXO
+        $('.tel').mask('(00) 0000-0000');
+        $('.tel2').mask('(00) 00000-0000');
+        $('#cpf').mask('000.000.000-00', {reverse: true});
 });
         </script>
 @endsection

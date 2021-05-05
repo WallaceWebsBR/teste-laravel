@@ -11,12 +11,17 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $ctps
  * @property string $deparment
  * @property string $tel
+ * @property string $tel2
+ * @property string $tel3
+ * @property string $tel4
+ * @property string $tel5
  */
+
 class Users extends Model
 {
     /**
      * @var array
      */
-    protected $fillable = ['name', 'cpf', 'ctps', 'department', 'tel'];
+    protected $fillable = ['name', 'cpf', 'ctps', 'department', 'tel', 'tel2', 'tel3', 'tel4', 'tel5'];
 
 }

@@ -25,4 +25,4 @@ Route::get('/cadastro', [Cadastro::class, 'index']);
 
 Route::post('/cadastro', [Cadastro::class, 'insertUser']);
 
-Route::patch('/cadastro', [Cadastro::class, 'updateUser']);
+Route::patch('/cadastro', [Cadastro::class, 'findUser']);

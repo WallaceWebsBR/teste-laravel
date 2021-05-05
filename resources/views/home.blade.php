@@ -19,7 +19,7 @@
                     <td>{{ $user->name }}</td> 
                     <td>{{ $user->cpf }}</td>
                     <td>{{ $user->department }}</td>
-                    <td>{{ $user->tel }}</td>
+                    <td>{{ $user->tel }}    {{ $user->tel2 }}    {{ $user->tel3 }}    {{ $user->tel4 }}    {{ $user->tel5 }}</td>
                     <td>
                       <form method="post" action="/cadastro"> 
                         @csrf
@@ -50,28 +50,17 @@
             @csrf
             @method('DELETE')
             <input type="hidden" id="confirmdelete" name="id">
-            <button type="submit" class="btn btn-primary">Deletar</button>
+            <button type="submit" class="btn btn-danger">Deletar</button>
           </form>
       </div>
     </div>
   </div>
 </div>     
     <script>
-        function btnEdit(x){
-            
-
-        }
-
         $(document).on("click", ".delete", function () {
           var eventId = $(this).data('id');
           $('#deleteid').html( eventId );
           $('#confirmdelete').attr('value', eventId);
       });
-        // $('#edit-modal').on('show.bs.modal', function(e) {
-        //     var $modal = $(this),
-        //     esseyId = e.relatedTarget.id;
-            
-        //     $modal.find('.edit-content').html(esseyId);            
-        // })
     </script>
 @endsection

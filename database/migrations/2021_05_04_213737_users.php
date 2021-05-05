@@ -17,10 +17,14 @@ class Users extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('cpf')->unique();
+            $table->string('cpf', 14)->unique();
             $table->string('ctps');
             $table->string('department');
-            $table->string('tel');
+            $table->string('tel')->nullable('true');
+            $table->string('tel2')->nullable('true');
+            $table->string('tel3')->nullable('true');
+            $table->string('tel4')->nullable('true');
+            $table->string('tel5')->nullable('true');
             $table->timestamps();
         });
     }
