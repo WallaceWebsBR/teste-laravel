@@ -22,7 +22,7 @@
                     <td>{{ $user->id }}</td>
                     <td>{{ $user->name }}</td> 
                     <td>{{ $user->cpf }}</td>
-                    <td>{{ $user->deparment }}</td>
+                    <td>{{ $user->department }}</td>
                     <td>{{ $user->tel }}</td>
                     <td><button class="btn btn-primary" onClick="btnEdit('{{ $user->id }}')">Editar</button>
                     <button class="btn btn-danger" onClick="btnDel('{{ $user->id }}')" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Excluir</button></td>

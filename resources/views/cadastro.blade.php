@@ -9,21 +9,21 @@
                 @csrf
                 <div class="col-xs-2" id='form'>       
                     <label>CPF (único)</label>
-                    <input class="form-control" name="cpf" type="text">
+                    <input class="form-control" name="cpf" id="cpf" maxlength="11" required>
                     <label> Nome </label>
                     <input class="form-control" name="name" type="text">
                     <label>Carteira de Trabalho</label>
-                    <input class="form-control" name="ctps" type="text">
+                    <input class="form-control" name="ctps" type="number">
                     <label>Setor</label>
                         <select class="form-select" name="department">
-                            <option value="sales">Vendas</option>
-                            <option value="office">Escritório</option>
-                            <option value="stock">Estoque</option>
-                            <option value="administrative">Administrativo</option>
+                            <option value="Vendas">Vendas</option>
+                            <option value="Escritório">Escritório</option>
+                            <option value="Estoque">Estoque</option>
+                            <option value="Administrativo">Administrativo</option>
                         </select>
                     <label>Telefone</label>
                     <div class="input-group mb-3">
-                     <input class="form-control" type="text" name="tel1">
+                     <input class="form-control" type="text" name="tel1" id="tel1">
                      <button id="addTel" class="btn btn-primary">Adicionar mais</button>
                      
                 </div>
@@ -35,7 +35,7 @@
     </div>
         <script>
         $(document).ready(function() {
-            var max_fields      = 10; //maximum input boxes allowed
+            var max_fields      = 5; //maximum input boxes allowed
             var wrapper   		= $("#form"); //Fields wrapper
             var add_button      = $("#addTel"); //Add button ID
             
@@ -44,7 +44,7 @@
                 e.preventDefault();
                 if(x < max_fields){ //max input box allowed
                     x++; //text box increment
-                    $(wrapper).append('<div class="input-group mb-3"><input class="form-control" type="text" name="tel' + x + '"/><button id="btnRemoveTel" class="btn btn-danger">Remover</button></div>'); //add input box
+                    $(wrapper).append('<div class="input-group mb-3"><input class="form-control" type="text" name="tel' + x + '" id="tel' + x + '"/><button id="btnRemoveTel" class="btn btn-danger">Remover</button></div>'); //add input box
                 }
             });
             
@@ -52,18 +52,13 @@
                 e.preventDefault(); $(this).parent('div').remove(); x--;
             })
         });
-// //INITALIZE TEL1
-        // let x = 1;
-        // $(document).on('click', '#addtel', function(){
-        // //ADD +1 TO TEL
-        // x += 1;
-        // var html = '<div class="input-group mb-3" id="tel' + x + '"><input class="form-control" name="tel' + x +'" type="text"> <button class="btn btn-danger" onClick="removeTel(' + x + ')">Remover</button> </div>';
-        // $(this).parent().append(html);
-        // });
-
-        // //REMOVE TEL
-        // function removeTel(x){
-        //     $('#tel'+ x).remove();
-        // };
+        $(document).ready(function(){
+  $('#tel1').mask('(00) 00000-0000');
+  $('#tel2').mask('(00) 00000-0000');
+  $('#tel3').mask('(00) 00000-0000');
+  $('#tel4').mask('(00) 00000-0000');
+  $('#tel5').mask('(00) 00000-0000');
+  $('#cpf').mask('000.000.000-00', {reverse: true});
+});
         </script>
 @endsection
