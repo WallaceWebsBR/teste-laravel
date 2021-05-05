@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Users;
+use Illuminate\Support\Facades\DB;
 
 class Cadastro extends Controller
 {
@@ -20,5 +21,9 @@ class Cadastro extends Controller
         $user->tel = $request->input('tel1').'; '.$request->input('tel2').'; '.$request->input('tel3').'; '.$request->input('tel4').'; '.$request->input('tel5');
         $user->save();
         return view('cadastro')->with('info', $info);
+    }
+    public function updateUser(Request $request){
+        $result = DB::table('users')->where('id', '=', $request->input('id'));
+        print_r($result);
     }
 }

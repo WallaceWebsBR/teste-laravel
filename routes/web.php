@@ -19,6 +19,10 @@ Route::get('/', [Homepage::class, 'index']);
 
 Route::post('/', [Homepage::class, 'userList']);
 
+Route::delete('/', [Homepage::class, 'deleteUser']);
+
 Route::get('/cadastro', [Cadastro::class, 'index']);
 
 Route::post('/cadastro', [Cadastro::class, 'insertUser']);
+
+Route::patch('/cadastro', [Cadastro::class, 'updateUser']);
