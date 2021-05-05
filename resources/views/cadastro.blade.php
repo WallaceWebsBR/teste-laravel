@@ -8,13 +8,13 @@
                 <form method="post" action="cadastro">
                 @csrf
                 <div class="col-xs-2" id='form'>       
-                    <label>CPF (único)</label>
+                    <label>CPF (único)</label><i class="bi bi-key"></i>
                     <input class="form-control" name="cpf" id="cpf" maxlength="11" value="{{ $user->cpf ?? '' }}" required>
-                    <label> Nome </label>
+                    <label> Nome </label><i class="bi bi-file-person"></i>
                     <input class="form-control" name="name" type="text" value="{{ $user->name ?? '' }}" required>
-                    <label>Carteira de Trabalho</label>
+                    <label>Carteira de Trabalho</label><i class="bi bi-award"></i>
                     <input class="form-control" name="ctps" type="number" value="{{ $user->ctps ?? '' }}" required>
-                    <label>Setor</label>
+                    <label>Setor</label><i class="bi bi-briefcase"></i>
                         <select class="form-select" name="department" value="{{ $user->department ?? '' }}">
                             <option value="Vendas">Vendas</option>
                             <option value="Escritório">Escritório</option>
@@ -22,6 +22,7 @@
                             <option value="Administrativo">Administrativo</option>
                         </select>
                     <label>Telefones</label>
+                    <i class="bi bi-telephone"></i>
                     <div class="row">
                     <div class="input-group mb-3">
                     <input class="tel form-control" type="text" name="tel1" id="tel1" placeholder="Fixo: (00) 0000-0000" value="{{ $user->tel ?? '' }}">

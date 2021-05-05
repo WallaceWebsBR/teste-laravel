@@ -29,8 +29,7 @@
               <form class="d-flex" method="post" action="/">
               @csrf
                 <input class="form-control me-2" type="search" placeholder="Pesquise Aqui..." aria-label="Search" name="name" required>
-                <button cl
-                    @shass="btn btn-outline-success" type="submit">Pesquisar</button>
+                <button class="btn-primary" type="submit">Pesquisar <i class="fas fa-search"></i></button>
               </form>
             </div>
           </div>
@@ -45,5 +44,6 @@
             <center>WallaceWebs &copy; 2021. All Rights Reserved. Made by <a href="https://wallace.tk">Wallace Alberto.</a></center>
         </footer>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.10/jquery.mask.js"></script>
-  </body>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
+      </body>
 </html>

@@ -30,7 +30,7 @@ class Cadastro extends Controller
             $info = "Os dados de $user->name foram atualizados no banco!";
             return view('cadastro')->with('info', $info);
         }else{
-
+            //VERIFY CPF IS UNIQUE
             try {
                 
                 $info = 'Os dados de '.$request->input('name').' foram inseridos no banco!';
@@ -60,6 +60,7 @@ class Cadastro extends Controller
     public function findUser(Request $request){
         $id = $request->input('id');
         $user = Users::find($id);
+        //VALUE TO CHANGE VIEW REQUEST
         $update = 'yes';
         return view('cadastro',  compact('update'))->with('user', $user);
     }

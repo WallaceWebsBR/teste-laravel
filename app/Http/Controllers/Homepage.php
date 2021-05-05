@@ -15,7 +15,7 @@ class Homepage extends BaseController
         return view('home')->with('users', $users);
     }
 
-    public function userList(Request $request){
+    public function userSearch(Request $request){
         $name = $request->input('name');
     
         $users = DB::table('users')->where(function ($query) use ($name) {

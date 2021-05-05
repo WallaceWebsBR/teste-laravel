@@ -4,9 +4,10 @@
  
 @section('content')
             <h1>Consulta usuario: {{$name ?? ''}}</h1><br>
+            <div class="table-responsive">
             <table class="table table-hover">
                 <thead>
-                    <th>ID</th>
+                    <th># ID</th>
                     <th>Nome</th>
                     <th>CPF</th>
                     <th>Setor</th>
@@ -33,6 +34,7 @@
                 @endforeach
                 </tbody>
             </table>
+            </div>
 <!-- Modal -->
 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog">

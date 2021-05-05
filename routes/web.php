@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [Homepage::class, 'index']);
 
-Route::post('/', [Homepage::class, 'userList']);
+Route::post('/', [Homepage::class, 'userSearch']);
 
 Route::delete('/', [Homepage::class, 'deleteUser']);
 
