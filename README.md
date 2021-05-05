@@ -11,7 +11,7 @@
 # Rode os seguintes comandos:
 1. git clone https://github.com/WallaceWebsBR/teste-laravel.git
 
-2. Renomeie o arquivo .env.example para .env e edite as variáveis
+2. Renomeie o arquivo .env.example para .env e edite as variáveis para seu banco local
 
 3. Rode os seguintes comandos: 
 ```shell
