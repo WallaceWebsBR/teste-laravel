@@ -15,8 +15,7 @@
 
 3. Roda os seguintes comandos: 
 
-$ php artisan migrate
-$ php artisan serve
+$ php artisan migrate && php artisan serve
 
 ## License
 
