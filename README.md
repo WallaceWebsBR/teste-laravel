@@ -8,7 +8,7 @@
 </p>
 
 ## Teste Laravel
-# Rode os seguintes comandos:
+# Localhost -> Rode os seguintes comandos:
 1. git clone https://github.com/WallaceWebsBR/teste-laravel.git
 
 2. Renomeie o arquivo .env.example para .env e edite as variáveis para seu banco local
@@ -19,6 +19,9 @@ php artisan migrate
 
 php artisan serve
 ```
+
+# Rodar em docker -> Em breve..
+
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
