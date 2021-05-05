@@ -13,10 +13,12 @@
 
 2. Renomeie o arquivo .env.example para .env e edite as variáveis
 
-3. Roda os seguintes comandos: 
+3. Rode os seguintes comandos: 
+```shell
+php artisan migrate
 
-$ php artisan migrate && php artisan serve
-
+php artisan serve
+```
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
