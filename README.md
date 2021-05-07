@@ -15,6 +15,8 @@
 
 3. Rode os seguintes comandos: 
 ```shell
+composer install
+
 php artisan migrate
 
 php artisan serve
